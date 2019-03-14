@@ -1,16 +1,17 @@
 data_path=$(pwd)
 cd ../collector
 
+if [ ! -d tmp/htmls ]; then
+    mkdir tmp/htmls
+fi
+if [ ! -d tmp/texts ]; then
+    mkdir tmp/texts
+fi
+
 for data_file in $data_path/*.json
 do
-    if [ ! -d tmp/htmls ]; then
-	mkdir tmp/htmls
-    fi
-    # scrapy crawl sp -a filename="$data_file"
+    scrapy crawl sp -a filename="$data_file"
 
-    if [ ! -d tmp/texts ]; then
-	mkdir tmp/texts
-    fi
     for filename in tmp/htmls/http*
     do
 	ofile=$(echo "$(basename $filename)")
@@ -40,6 +41,5 @@ do
 	fi
     done
 
-    # python3 ../preprocess.py $data_file
-    # python3 ../fill_in_blanks.py $data_file
+    python3 ../Sentence/fill_in_blanks.py $data_file
 done
