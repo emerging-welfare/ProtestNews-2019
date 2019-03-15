@@ -102,4 +102,4 @@ for url in df.url.unique().tolist():
 # df.to_csv("asd.csv", index=False)
 df.loc[df.sentence == "REDACTED"] = df[df.sentence == "REDACTED"].apply(lambda x: fill_blank(x, df[df.url == x.url]), axis=1)
 df = df.drop(["text", "offset"], axis=1)
-df.to_csv(re.sub(r"\.json$", r".csv", filename), index=False)
+df.to_json(re.sub(r"\.json$", r"_filled.json", filename), orient="records", lines=True, force_ascii=False)

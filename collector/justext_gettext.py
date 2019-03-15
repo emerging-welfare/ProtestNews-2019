@@ -4,7 +4,7 @@ import sys
 filename=sys.argv[1]
 
 try:
-    with open("tmp/htmls/" + filename, "r") as f:
+    with open("tmp/htmls/" + filename, "rb") as f:
         html = f.read()
 except:
     print("No file named as : ", filename)
@@ -19,4 +19,4 @@ for paragraph in paragraphs:
 
 ofile.close()
 
-print("Finished : ", filename)
+print("Finished html-to-text : ", filename)

@@ -1385,3 +1385,1654 @@ INFO: Dumping Scrapy stats:
  'scheduler/enqueued/memory': 266,
  'start_time': datetime.datetime(2019, 3, 12, 14, 13, 46, 315347)}
 INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'BOT_NAME': 'collector', 'SPIDER_MODULES': ['collector.spiders'], 'DOWNLOAD_DELAY': 1, 'NEWSPIDER_MODULE': 'collector.spiders', 'ROBOTSTXT_OBEY': True}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole']
+WARNING: /usr/local/lib/python3.5/dist-packages/selenium/webdriver/phantomjs/webdriver.py:49: UserWarning: Selenium support for PhantomJS has been deprecated, please use headless versions of Chrome or Firefox instead
+  warnings.warn('Selenium support for PhantomJS has been deprecated, please use headless '
+
+DEBUG: POST http://127.0.0.1:39903/wd/hub/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"platformName": "any", "browserName": "phantomjs"}}, "desiredCapabilities": {"platform": "ANY", "version": "", "javascriptEnabled": true, "browserName": "phantomjs"}}
+INFO: Starting new HTTP connection (1): 127.0.0.1
+DEBUG: "POST /wd/hub/session HTTP/1.1" 200 536
+DEBUG: Finished Request
+DEBUG: POST http://127.0.0.1:39903/wd/hub/session/d4e4f4d0-46f4-11e9-8b14-3501b97d0df1/timeouts {"sessionId": "d4e4f4d0-46f4-11e9-8b14-3501b97d0df1", "pageLoad": 30000}
+INFO: Starting new HTTP connection (1): 127.0.0.1
+DEBUG: "POST /wd/hub/session/d4e4f4d0-46f4-11e9-8b14-3501b97d0df1/timeouts HTTP/1.1" 400 710
+DEBUG: Finished Request
+DEBUG: POST http://127.0.0.1:39903/wd/hub/session/d4e4f4d0-46f4-11e9-8b14-3501b97d0df1/timeouts {"sessionId": "d4e4f4d0-46f4-11e9-8b14-3501b97d0df1", "ms": 30000.0, "type": "page load"}
+INFO: Starting new HTTP connection (1): 127.0.0.1
+DEBUG: "POST /wd/hub/session/d4e4f4d0-46f4-11e9-8b14-3501b97d0df1/timeouts HTTP/1.1" 200 74
+DEBUG: Finished Request
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+ERROR: Error while obtaining start requests
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/core/engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "/home/osman/Dropbox/work/ProtestNews-2019/collector/collector/spiders/sp.py", line 35, in start_requests
+    outfile = response.url.replace("/", "_")
+NameError: name 'response' is not defined
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 7, 34, 57, 103287),
+ 'log_count/DEBUG': 10,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'log_count/WARNING': 1,
+ 'memusage/max': 89640960,
+ 'memusage/startup': 89640960,
+ 'start_time': datetime.datetime(2019, 3, 15, 7, 34, 56, 971717)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'ROBOTSTXT_OBEY': True, 'DOWNLOAD_DELAY': 1, 'SPIDER_MODULES': ['collector.spiders'], 'NEWSPIDER_MODULE': 'collector.spiders', 'BOT_NAME': 'collector'}
+INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+ERROR: Error while obtaining start requests
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/core/engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "/home/osman/Dropbox/work/ProtestNews-2019/collector/collector/spiders/sp.py", line 26, in start_requests
+    outfile = response.url.replace("/", "_")
+NameError: name 'response' is not defined
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 8, 10, 0, 889969),
+ 'log_count/DEBUG': 1,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85696512,
+ 'memusage/startup': 85696512,
+ 'start_time': datetime.datetime(2019, 3, 15, 8, 10, 0, 766087)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'BOT_NAME': 'collector', 'SPIDER_MODULES': ['collector.spiders'], 'NEWSPIDER_MODULE': 'collector.spiders', 'ROBOTSTXT_OBEY': True, 'DOWNLOAD_DELAY': 1}
+INFO: Enabled extensions:
+['scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 8, 12, 1, 741156),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85852160,
+ 'memusage/startup': 85852160,
+ 'start_time': datetime.datetime(2019, 3, 15, 8, 12, 1, 608137)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'DOWNLOAD_DELAY': 1, 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['collector.spiders'], 'NEWSPIDER_MODULE': 'collector.spiders', 'BOT_NAME': 'collector'}
+INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 8, 12, 28, 513053),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85622784,
+ 'memusage/startup': 85622784,
+ 'start_time': datetime.datetime(2019, 3, 15, 8, 12, 28, 378457)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'DOWNLOAD_DELAY': 1, 'SPIDER_MODULES': ['collector.spiders'], 'ROBOTSTXT_OBEY': True, 'BOT_NAME': 'collector', 'NEWSPIDER_MODULE': 'collector.spiders'}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 8, 12, 46, 2042),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85663744,
+ 'memusage/startup': 85663744,
+ 'start_time': datetime.datetime(2019, 3, 15, 8, 12, 45, 865890)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'BOT_NAME': 'collector', 'ROBOTSTXT_OBEY': True, 'NEWSPIDER_MODULE': 'collector.spiders', 'DOWNLOAD_DELAY': 1, 'SPIDER_MODULES': ['collector.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.memusage.MemoryUsage']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 8, 13, 8, 572757),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85647360,
+ 'memusage/startup': 85647360,
+ 'start_time': datetime.datetime(2019, 3, 15, 8, 13, 8, 439573)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'DOWNLOAD_DELAY': 1, 'SPIDER_MODULES': ['collector.spiders'], 'BOT_NAME': 'collector', 'NEWSPIDER_MODULE': 'collector.spiders', 'ROBOTSTXT_OBEY': True}
+INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.corestats.CoreStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 8, 13, 27, 790990),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85655552,
+ 'memusage/startup': 85655552,
+ 'start_time': datetime.datetime(2019, 3, 15, 8, 13, 27, 656900)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'SPIDER_MODULES': ['collector.spiders'], 'NEWSPIDER_MODULE': 'collector.spiders', 'BOT_NAME': 'collector', 'DOWNLOAD_DELAY': 1, 'ROBOTSTXT_OBEY': True}
+INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.corestats.CoreStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 8, 13, 39, 918340),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85671936,
+ 'memusage/startup': 85671936,
+ 'start_time': datetime.datetime(2019, 3, 15, 8, 13, 39, 789078)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'SPIDER_MODULES': ['collector.spiders'], 'NEWSPIDER_MODULE': 'collector.spiders', 'DOWNLOAD_DELAY': 1, 'ROBOTSTXT_OBEY': True, 'BOT_NAME': 'collector'}
+INFO: Enabled extensions:
+['scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 8, 14, 36, 484606),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85417984,
+ 'memusage/startup': 85417984,
+ 'start_time': datetime.datetime(2019, 3, 15, 8, 14, 36, 349128)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['collector.spiders'], 'BOT_NAME': 'collector', 'DOWNLOAD_DELAY': 1, 'NEWSPIDER_MODULE': 'collector.spiders'}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 8, 16, 54, 738319),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85389312,
+ 'memusage/startup': 85389312,
+ 'start_time': datetime.datetime(2019, 3, 15, 8, 16, 54, 601230)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'DOWNLOAD_DELAY': 1, 'NEWSPIDER_MODULE': 'collector.spiders', 'BOT_NAME': 'collector', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['collector.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.corestats.CoreStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 8, 22, 39, 480694),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85409792,
+ 'memusage/startup': 85409792,
+ 'start_time': datetime.datetime(2019, 3, 15, 8, 22, 39, 343212)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'NEWSPIDER_MODULE': 'collector.spiders', 'SPIDER_MODULES': ['collector.spiders'], 'DOWNLOAD_DELAY': 1, 'BOT_NAME': 'collector', 'ROBOTSTXT_OBEY': True}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 10, 12, 27, 331360),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85618688,
+ 'memusage/startup': 85618688,
+ 'start_time': datetime.datetime(2019, 3, 15, 10, 12, 27, 198905)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'NEWSPIDER_MODULE': 'collector.spiders', 'BOT_NAME': 'collector', 'SPIDER_MODULES': ['collector.spiders'], 'DOWNLOAD_DELAY': 1, 'ROBOTSTXT_OBEY': True}
+INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/robots.txt> from <GET http://www.thehindu.com/robots.txt>
+WARNING: Remote certificate is not valid for hostname "timesofindia.indiatimes.com"; 'mmnotification.indiatimes.com'!='timesofindia.indiatimes.com'
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/robots.txt> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/robots.txt> (referer: None)
+WARNING: Remote certificate is not valid for hostname "www.thehindu.com"; 'www.thehindugroup.com'!='www.thehindu.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/robots.txt> (referer: None)
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/mc-officials-beat-hasty-retreat-as-mob-attac/435976/> (referer: None)
+WARNING: Remote certificate is not valid for hostname "timesofindia.indiatimes.com"; 'mmnotification.indiatimes.com'!='timesofindia.indiatimes.com'
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece>
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/state-admits-adarsh-didn-t-have-green-nod/1060369/> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/delhi/Transport-strike-partial-chaos-averted/articleshow/831003930.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/delhi/Transport-strike-partial-chaos-averted/articleshow/831003930.txt>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece>
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/likud-better-placed-to-form-govt-in-israel/422863/> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/business/india-business/Sikkim-govt-signs-MoU-for-manufacturing-power-transistors/articleshow/1929556429.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/business/india-business/Sikkim-govt-signs-MoU-for-manufacturing-power-transistors/articleshow/1929556429.txt>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece>
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Cops-caught-napping-16-cases-of-stabbing-in-Hubli/articleshow/595728124.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Cops-caught-napping-16-cases-of-stabbing-in-Hubli/articleshow/595728124.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/robots.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece>
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/delhi/Fish-will-be-back-and-cheap-Dealers/articleshow/1261411580.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/delhi/Fish-will-be-back-and-cheap-Dealers/articleshow/1261411580.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/states/tamil-nadu/2011/may/03/tn-tannery-sealed-for-violating-pcb-direction-249973.html> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/SBI-revises-interest-on-term-deposits/articleshow/1702554715.cms> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece>
+WARNING: Remote certificate is not valid for hostname "timesofindia.indiatimes.com"; 'mmnotification.indiatimes.com'!='timesofindia.indiatimes.com'
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/RTPS-bags-national-awards/articleshow/161647246.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/RTPS-bags-national-awards/articleshow/161647246.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Childless-woman-ends-life/articleshow/716560415.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Childless-woman-ends-life/articleshow/716560415.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Uncertainty-dogs-most-schools-over-re-opening/articleshow/1837544578.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece>
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/ahmedabad/Uncertainty-dogs-most-schools-over-re-opening/articleshow/1837544578.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/chandigarh/STATESCAN/articleshow/708599418.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/chandigarh/STATESCAN/articleshow/708599418.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Medical-shop-owner-killed-jewellery-missing/articleshow/2132513928.txt> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Medical-shop-owner-killed-jewellery-missing/articleshow/2132513928.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/delhi/Unprecedented-security-cover-for-city/articleshow/549868245.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/delhi/Unprecedented-security-cover-for-city/articleshow/549868245.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Cauvery-Vazhapadi-asks-Union-ministers-to-quit/articleshow/297052488.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Cauvery-Vazhapadi-asks-Union-ministers-to-quit/articleshow/297052488.txt>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/It-all-ads-up-Bachchans-dil-maange-more-for-sure/articleshow/673582092.cms> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/business/india-business/Few-sops-likely-for-industry-in-Budget/articleshow/18120405.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/business/india-business/Few-sops-likely-for-industry-in-Budget/articleshow/18120405.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/dummy-writers-departmental-inquiry-finds-ch/727386/> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/143817/>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece>
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Students-condemn-fee-hike-stage-protest/articleshow/948078482.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Students-condemn-fee-hike-stage-protest/articleshow/948078482.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/states/odisha/2010/sep/21/tribal-kids-feel-the-language-barrier-188750.html> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/164541/>
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/business/india-business/BHEL-bags-Rs-10-cr-order-from-ONGC/articleshow/2007068406.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/business/india-business/BHEL-bags-Rs-10-cr-order-from-ONGC/articleshow/2007068406.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/us-presidential-award-for-two-indian-america/1211275/> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Authorities-doing-precious-little-to-halt-GSRTC-slide/articleshow/1078039113.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/ahmedabad/Authorities-doing-precious-little-to-halt-GSRTC-slide/articleshow/1078039113.txt>: HTTP status code is not handled or not allowed
+WARNING: Remote certificate is not valid for hostname "www.thehindu.com"; 'www.thehindugroup.com'!='www.thehindu.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Hawkers-attacked-at-Vatva-10-hurt/articleshow/675643702.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/ahmedabad/Hawkers-attacked-at-Vatva-10-hurt/articleshow/675643702.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/147851/>
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/travels-with-a-lens/1088217/> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Contractors-protest-outside-CMs-office/articleshow/2114151854.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/ahmedabad/Contractors-protest-outside-CMs-office/articleshow/2114151854.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/cities/bengaluru/2011/sep/01/engineer-supervisor-crushed-to-death-286624.html> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece> (referer: None)
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/call-allparty-meet-bjp-tells-pm/656768/> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/business/india-business/Essel-sells-50-lakh-Zee-shares-to-US-investor/articleshow/402816722.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/business/india-business/Essel-sells-50-lakh-Zee-shares-to-US-investor/articleshow/402816722.txt>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece> from <GET http://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece>
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/states/kerala/2015/sep/07/CPI-Snubs-Big-Brother-for-Secular-Hare-Krishna-Chant-810775.html> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/ahmedabad/State-govt-revokes-disciplinary-action-against-teachers/articleshow/1101051327.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece>
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/ahmedabad/State-govt-revokes-disciplinary-action-against-teachers/articleshow/1101051327.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Its-celebration-time-for-sisters-and-brothers/articleshow/41209954.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Its-celebration-time-for-sisters-and-brothers/articleshow/41209954.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/chandigarh/Plea-against-reversion-quashed/articleshow/1994550104.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/chandigarh/Plea-against-reversion-quashed/articleshow/1994550104.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Tension-in-Walled-City-area-during-bandh/articleshow/698166527.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/ahmedabad/Tension-in-Walled-City-area-during-bandh/articleshow/698166527.txt>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/delhi/Govt-defends-lack-of-tender-system-in-wll/articleshow/1984971772.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/delhi/Govt-defends-lack-of-tender-system-in-wll/articleshow/1984971772.txt>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece> from <GET http://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Vikrant-Tyres-annual-meet-today/articleshow/406643065.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Vikrant-Tyres-annual-meet-today/articleshow/406643065.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/delhi/Another-SIMI-activist-held/articleshow/1131398874.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece> from <GET http://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece>
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/delhi/Another-SIMI-activist-held/articleshow/1131398874.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/business/india-business/Investor-protection-fund-likely-by-next-week/articleshow/1635424176.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/business/india-business/Investor-protection-fund-likely-by-next-week/articleshow/1635424176.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/BOI-revises-rates-of-FCNR-deposits-from-Sept-25/articleshow/2057114703.cms> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Guiding-the-taste-of-India/articleshow/1266371897.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/ahmedabad/Guiding-the-taste-of-India/articleshow/1266371897.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/business/india-business/Anti-dumping-norms-for-fixing-countries-as-non-market/articleshow/683295.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/business/india-business/Anti-dumping-norms-for-fixing-countries-as-non-market/articleshow/683295.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/cities/bengaluru/2009/may/21/kannada-must-be-promoted-50973.html> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Shimoga-de-addiction-center-completes-a-year/articleshow/1082360562.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Shimoga-de-addiction-center-completes-a-year/articleshow/1082360562.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/cities/chennai/2015/nov/25/TVS-Distributes-Food-in-Flood-affected-Areas-847762.html> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/business/india-business/Coca-Cola-hits-out-at-Pepsis-new-flavour/articleshow/4499272.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/business/india-business/Coca-Cola-hits-out-at-Pepsis-new-flavour/articleshow/4499272.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/Nutraceutical-co-British-Biologicals-to-enter-UK/articleshow/489031781.cms> (referer: None)
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/in-the-nick-of-time/712913/> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece> from <GET http://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece>
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/states/tamil-nadu/2012/mar/29/butcher-withdraws-plea-after-cops-permit-fast-353300.html> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/delhi/Licence-policy-for-air-guns-to-be-reviewed/articleshow/612391581.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/delhi/Licence-policy-for-air-guns-to-be-reviewed/articleshow/612391581.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Hegde-gives-wake-up-call-to-Krishna-govt/articleshow/1538076026.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Hegde-gives-wake-up-call-to-Krishna-govt/articleshow/1538076026.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/punjab-govt-revokes-ban-on-aarakshan/831894/> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/For-the-Youngs-Mission-India-is-exciting/articleshow/634942369.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Childless-woman-ends-life/articleshow/159933344.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece>
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Childless-woman-ends-life/articleshow/159933344.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/suspended-cop-s-throw-may-go-a-long-way/660780/> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Seven-fatal-drowning-cases-in-Bhavnagar/articleshow/97084857.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/ahmedabad/Seven-fatal-drowning-cases-in-Bhavnagar/articleshow/97084857.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/business/india-business/Pharma-firms-fight-to-protect-brand-name/articleshow/13269859.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/business/india-business/Pharma-firms-fight-to-protect-brand-name/articleshow/13269859.txt>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece>
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Need-to-maintain-spiritualism-within-modern-context/articleshow/1027269748.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Need-to-maintain-spiritualism-within-modern-context/articleshow/1027269748.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Action-against-teachers-after-Saturday/articleshow/1609268142.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/ahmedabad/Action-against-teachers-after-Saturday/articleshow/1609268142.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Govt-plans-new-ad-policy/articleshow/246237698.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Govt-plans-new-ad-policy/articleshow/246237698.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/cities/bengaluru/2010/jul/22/reviving-rangoli-171894.html> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/business/india-business/BoI-revises-interest-rate-on-deposits/articleshow/1393941294.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/business/india-business/BoI-revises-interest-rate-on-deposits/articleshow/1393941294.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Schoolteachers-hold-rally-announce-indefinite-bandh/articleshow/566126824.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/ahmedabad/Schoolteachers-hold-rally-announce-indefinite-bandh/articleshow/566126824.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Dental-students-protest-against-terrorism/articleshow/18297847.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece>
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Dental-students-protest-against-terrorism/articleshow/18297847.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Bonanza-for-film-buffs/articleshow/1028589584.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Bonanza-for-film-buffs/articleshow/1028589584.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/delhi/Russian-tourist-murdered/articleshow/1458104211.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/delhi/Russian-tourist-murdered/articleshow/1458104211.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Bellary-bandh-over-Tunga-waters-total/articleshow/1327715834.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Bellary-bandh-over-Tunga-waters-total/articleshow/1327715834.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Centre-submits-MMCB-revival-package/articleshow/1361030381.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/ahmedabad/Centre-submits-MMCB-revival-package/articleshow/1361030381.txt>: HTTP status code is not handled or not allowed
+INFO: Crawled 90 pages (at 90 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/delhi/Allegations-against-power-minister/articleshow/2072033185.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/delhi/Allegations-against-power-minister/articleshow/2072033185.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/delhi/Relatives-make-frantic-calls/articleshow/1160584795.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/delhi/Relatives-make-frantic-calls/articleshow/1160584795.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/chandigarh/Rinwa-seeks-probe-into-bungling-of-MC-funds/articleshow/1865949017.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/chandigarh/Rinwa-seeks-probe-into-bungling-of-MC-funds/articleshow/1865949017.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Kodagu-gearing-up-for-Kaveri-festival-in-October/articleshow/478631948.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Kodagu-gearing-up-for-Kaveri-festival-in-October/articleshow/478631948.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/Akshs-fibre-to-home-service-from-August/articleshow/2978587.cms> (referer: None)
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/hyderabad/Bribe-amounts-put-ACB-in-a-quandary/articleshow/2140382520.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/hyderabad/Bribe-amounts-put-ACB-in-a-quandary/articleshow/2140382520.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://timesofindia.indiatimes.com/city/bengaluru/Admonished-student-ends-life/articleshow/576975405.txt> (referer: None)
+INFO: Ignoring response <404 https://timesofindia.indiatimes.com/city/bengaluru/Admonished-student-ends-life/articleshow/576975405.txt>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Police-stations-can-communicate-better-now/articleshow/1450547470.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/BJP-MLAs-expelled-over-DUSU-poll/articleshow/1422232637.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Afghan-war-could-mean-more-dope-in-Gujarat/articleshow/856824312.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/USA-net-becomes-paid-only-to-be-hacked/articleshow/1275149611.cms> (referer: None)
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 3,
+ 'downloader/request_bytes': 35885,
+ 'downloader/request_count': 120,
+ 'downloader/request_method_count/GET': 120,
+ 'downloader/response_bytes': 1574621,
+ 'downloader/response_count': 120,
+ 'downloader/response_status_count/200': 50,
+ 'downloader/response_status_count/301': 19,
+ 'downloader/response_status_count/404': 51,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 10, 39, 41, 704025),
+ 'httperror/response_ignored_count': 51,
+ 'httperror/response_ignored_status_count/404': 51,
+ 'log_count/DEBUG': 124,
+ 'log_count/INFO': 59,
+ 'log_count/WARNING': 5,
+ 'memusage/max': 91193344,
+ 'memusage/startup': 85676032,
+ 'response_received_count': 101,
+ 'scheduler/dequeued': 118,
+ 'scheduler/dequeued/memory': 118,
+ 'scheduler/enqueued': 118,
+ 'scheduler/enqueued/memory': 118,
+ 'start_time': datetime.datetime(2019, 3, 15, 10, 38, 21, 551214)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'NEWSPIDER_MODULE': 'collector.spiders', 'ROBOTSTXT_OBEY': True, 'DOWNLOAD_DELAY': 1, 'BOT_NAME': 'collector', 'SPIDER_MODULES': ['collector.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+WARNING: Remote certificate is not valid for hostname "timesofindia.indiatimes.com"; 'mmnotification.indiatimes.com'!='timesofindia.indiatimes.com'
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/robots.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/robots.txt> from <GET http://www.thehindu.com/robots.txt>
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/robots.txt> (referer: None)
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/mc-officials-beat-hasty-retreat-as-mob-attac/435976/> (referer: None)
+WARNING: Remote certificate is not valid for hostname "www.thehindu.com"; 'www.thehindugroup.com'!='www.thehindu.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/robots.txt> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/SBI-revises-interest-on-term-deposits/articleshow/1702554715.cms> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece>
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/state-admits-adarsh-didn-t-have-green-nod/1060369/> (referer: None)
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/likud-better-placed-to-form-govt-in-israel/422863/> (referer: None)
+WARNING: Remote certificate is not valid for hostname "timesofindia.indiatimes.com"; 'mmnotification.indiatimes.com'!='timesofindia.indiatimes.com'
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece>
+WARNING: Remote certificate is not valid for hostname "timesofindia.indiatimes.com"; 'mmnotification.indiatimes.com'!='timesofindia.indiatimes.com'
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece>
+WARNING: Remote certificate is not valid for hostname "timesofindia.indiatimes.com"; 'mmnotification.indiatimes.com'!='timesofindia.indiatimes.com'
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece>
+WARNING: Remote certificate is not valid for hostname "timesofindia.indiatimes.com"; 'mmnotification.indiatimes.com'!='timesofindia.indiatimes.com'
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece>
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/It-all-ads-up-Bachchans-dil-maange-more-for-sure/articleshow/673582092.cms> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece>
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/Transport-strike-partial-chaos-averted/articleshow/831003930.cms> (referer: None)
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/robots.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece>
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/Sikkim-govt-signs-MoU-for-manufacturing-power-transistors/articleshow/1929556429.cms> (referer: None)
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/states/tamil-nadu/2011/may/03/tn-tannery-sealed-for-violating-pcb-direction-249973.html> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Cops-caught-napping-16-cases-of-stabbing-in-Hubli/articleshow/595728124.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/chandigarh/STATESCAN/articleshow/708599418.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> (referer: None)
+WARNING: Remote certificate is not valid for hostname "timesofindia.indiatimes.com"; 'mmnotification.indiatimes.com'!='timesofindia.indiatimes.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/Fish-will-be-back-and-cheap-Dealers/articleshow/1261411580.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Childless-woman-ends-life/articleshow/716560415.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/RTPS-bags-national-awards/articleshow/161647246.cms> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece>
+WARNING: Remote certificate is not valid for hostname "timesofindia.indiatimes.com"; 'mmnotification.indiatimes.com'!='timesofindia.indiatimes.com'
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/BHEL-bags-Rs-10-cr-order-from-ONGC/articleshow/2007068406.cms> (referer: None)
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/dummy-writers-departmental-inquiry-finds-ch/727386/> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece>
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Medical-shop-owner-killed-jewellery-missing/articleshow/2132513928.cms> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/143817/>
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Uncertainty-dogs-most-schools-over-re-opening/articleshow/1837544578.cms> (referer: None)
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/states/odisha/2010/sep/21/tribal-kids-feel-the-language-barrier-188750.html> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/164541/>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece> (referer: None)
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/us-presidential-award-for-two-indian-america/1211275/> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Cauvery-Vazhapadi-asks-Union-ministers-to-quit/articleshow/297052488.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/Unprecedented-security-cover-for-city/articleshow/549868245.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/Few-sops-likely-for-industry-in-Budget/articleshow/18120405.cms> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece> from <GET http://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece>
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Students-condemn-fee-hike-stage-protest/articleshow/948078482.cms> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/147851/>
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/travels-with-a-lens/1088217/> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/Essel-sells-50-lakh-Zee-shares-to-US-investor/articleshow/402816722.cms> (referer: None)
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/cities/bengaluru/2011/sep/01/engineer-supervisor-crushed-to-death-286624.html> (referer: None)
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/call-allparty-meet-bjp-tells-pm/656768/> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece>
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/states/kerala/2015/sep/07/CPI-Snubs-Big-Brother-for-Secular-Hare-Krishna-Chant-810775.html> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Authorities-doing-precious-little-to-halt-GSRTC-slide/articleshow/1078039113.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Contractors-protest-outside-CMs-office/articleshow/2114151854.cms> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece>
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Tension-in-Walled-City-area-during-bandh/articleshow/698166527.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Hawkers-attacked-at-Vatva-10-hurt/articleshow/675643702.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/State-govt-revokes-disciplinary-action-against-teachers/articleshow/1101051327.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/BOI-revises-rates-of-FCNR-deposits-from-Sept-25/articleshow/2057114703.cms> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece> from <GET http://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece>
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Its-celebration-time-for-sisters-and-brothers/articleshow/41209954.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/chandigarh/Plea-against-reversion-quashed/articleshow/1994550104.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/Nutraceutical-co-British-Biologicals-to-enter-UK/articleshow/489031781.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/Govt-defends-lack-of-tender-system-in-wll/articleshow/1984971772.cms> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece> from <GET http://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece>
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/For-the-Youngs-Mission-India-is-exciting/articleshow/634942369.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Vikrant-Tyres-annual-meet-today/articleshow/406643065.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/Another-SIMI-activist-held/articleshow/1131398874.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/Investor-protection-fund-likely-by-next-week/articleshow/1635424176.cms> (referer: None)
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/cities/bengaluru/2009/may/21/kannada-must-be-promoted-50973.html> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/Coca-Cola-hits-out-at-Pepsis-new-flavour/articleshow/4499272.cms> (referer: None)
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/cities/chennai/2015/nov/25/TVS-Distributes-Food-in-Flood-affected-Areas-847762.html> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Guiding-the-taste-of-India/articleshow/1266371897.cms> (referer: None)
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/states/tamil-nadu/2012/mar/29/butcher-withdraws-plea-after-cops-permit-fast-353300.html> (referer: None)
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/in-the-nick-of-time/712913/> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece> from <GET http://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece>
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/Licence-policy-for-air-guns-to-be-reviewed/articleshow/612391581.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/Anti-dumping-norms-for-fixing-countries-as-non-market/articleshow/683295.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece> (referer: None)
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/punjab-govt-revokes-ban-on-aarakshan/831894/> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Childless-woman-ends-life/articleshow/159933344.cms> (referer: None)
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/news/suspended-cop-s-throw-may-go-a-long-way/660780/> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Shimoga-de-addiction-center-completes-a-year/articleshow/1082360562.cms> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/Pharma-firms-fight-to-protect-brand-name/articleshow/13269859.cms> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Hegde-gives-wake-up-call-to-Krishna-govt/articleshow/1538076026.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Action-against-teachers-after-Saturday/articleshow/1609268142.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Seven-fatal-drowning-cases-in-Bhavnagar/articleshow/97084857.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Schoolteachers-hold-rally-announce-indefinite-bandh/articleshow/566126824.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Dental-students-protest-against-terrorism/articleshow/18297847.cms> (referer: None)
+DEBUG: Crawled (200) <GET http://www.newindianexpress.com/cities/bengaluru/2010/jul/22/reviving-rangoli-171894.html> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Bonanza-for-film-buffs/articleshow/1028589584.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Need-to-maintain-spiritualism-within-modern-context/articleshow/1027269748.cms> (referer: None)
+INFO: Crawled 84 pages (at 84 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Govt-plans-new-ad-policy/articleshow/246237698.cms> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece>
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/BoI-revises-interest-rate-on-deposits/articleshow/1393941294.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Police-stations-can-communicate-better-now/articleshow/1450547470.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/Russian-tourist-murdered/articleshow/1458104211.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Kodagu-gearing-up-for-Kaveri-festival-in-October/articleshow/478631948.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/business/india-business/Akshs-fibre-to-home-service-from-August/articleshow/2978587.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Bellary-bandh-over-Tunga-waters-total/articleshow/1327715834.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/Allegations-against-power-minister/articleshow/2072033185.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Centre-submits-MMCB-revival-package/articleshow/1361030381.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/Admonished-student-ends-life/articleshow/576975405.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/Relatives-make-frantic-calls/articleshow/1160584795.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/chandigarh/Rinwa-seeks-probe-into-bungling-of-MC-funds/articleshow/1865949017.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/ahmedabad/Afghan-war-could-mean-more-dope-in-Gujarat/articleshow/856824312.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/bengaluru/USA-net-becomes-paid-only-to-be-hacked/articleshow/1275149611.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/delhi/BJP-MLAs-expelled-over-DUSU-poll/articleshow/1422232637.cms> (referer: None)
+DEBUG: Crawled (200) <GET https://timesofindia.indiatimes.com/city/hyderabad/Bribe-amounts-put-ACB-in-a-quandary/articleshow/2140382520.cms> (referer: None)
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 3,
+ 'downloader/request_bytes': 35885,
+ 'downloader/request_count': 120,
+ 'downloader/request_method_count/GET': 120,
+ 'downloader/response_bytes': 3549318,
+ 'downloader/response_count': 120,
+ 'downloader/response_status_count/200': 101,
+ 'downloader/response_status_count/301': 19,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 10, 45, 15, 834105),
+ 'log_count/DEBUG': 124,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 8,
+ 'memusage/max': 92475392,
+ 'memusage/startup': 85790720,
+ 'response_received_count': 101,
+ 'scheduler/dequeued': 118,
+ 'scheduler/dequeued/memory': 118,
+ 'scheduler/enqueued': 118,
+ 'scheduler/enqueued/memory': 118,
+ 'start_time': datetime.datetime(2019, 3, 15, 10, 43, 57, 619745)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'NEWSPIDER_MODULE': 'collector.spiders', 'BOT_NAME': 'collector', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['collector.spiders'], 'DOWNLOAD_DELAY': 1}
+INFO: Enabled extensions:
+['scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.corestats.CoreStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/robots.txt> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/143817/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/164541/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/147851/>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/robots.txt> from <GET http://www.thehindu.com/robots.txt>
+WARNING: Remote certificate is not valid for hostname "www.thehindu.com"; 'www.thehindugroup.com'!='www.thehindu.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/robots.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece>
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'NEWSPIDER_MODULE': 'collector.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['collector.spiders'], 'DOWNLOAD_DELAY': 1, 'BOT_NAME': 'collector'}
+INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6024
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/robots.txt> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/143817/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/164541/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/147851/>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/robots.txt> from <GET http://www.thehindu.com/robots.txt>
+WARNING: Remote certificate is not valid for hostname "www.thehindu.com"; 'www.thehindugroup.com'!='www.thehindu.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/robots.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece> from <GET http://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece> from <GET http://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece> from <GET http://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece> from <GET http://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece>
+WARNING: Remote certificate is not valid for hostname "www.thehindu.com"; 'www.thehindugroup.com'!='www.thehindu.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece> (referer: None)
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 3,
+ 'downloader/request_bytes': 11560,
+ 'downloader/request_count': 39,
+ 'downloader/request_method_count/GET': 39,
+ 'downloader/response_bytes': 672613,
+ 'downloader/response_count': 39,
+ 'downloader/response_status_count/200': 20,
+ 'downloader/response_status_count/301': 19,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 10, 56, 38, 660633),
+ 'log_count/DEBUG': 43,
+ 'log_count/INFO': 7,
+ 'log_count/WARNING': 2,
+ 'memusage/max': 85725184,
+ 'memusage/startup': 85725184,
+ 'response_received_count': 20,
+ 'scheduler/dequeued': 39,
+ 'scheduler/dequeued/memory': 39,
+ 'scheduler/enqueued': 39,
+ 'scheduler/enqueued/memory': 39,
+ 'start_time': datetime.datetime(2019, 3, 15, 10, 55, 53, 799323)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'NEWSPIDER_MODULE': 'collector.spiders', 'DOWNLOAD_DELAY': 1, 'BOT_NAME': 'collector', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['collector.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.corestats.CoreStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6024
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/robots.txt> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/143817/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/164541/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/147851/>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/robots.txt> from <GET http://www.thehindu.com/robots.txt>
+WARNING: Remote certificate is not valid for hostname "www.thehindu.com"; 'www.thehindugroup.com'!='www.thehindu.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/robots.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece> from <GET http://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece> from <GET http://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece> from <GET http://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece> from <GET http://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece> (referer: None)
+WARNING: Remote certificate is not valid for hostname "www.thehindu.com"; 'www.thehindugroup.com'!='www.thehindu.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece> (referer: None)
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 3,
+ 'downloader/request_bytes': 11560,
+ 'downloader/request_count': 39,
+ 'downloader/request_method_count/GET': 39,
+ 'downloader/response_bytes': 674082,
+ 'downloader/response_count': 39,
+ 'downloader/response_status_count/200': 20,
+ 'downloader/response_status_count/301': 19,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 11, 1, 7, 267544),
+ 'log_count/DEBUG': 43,
+ 'log_count/INFO': 7,
+ 'log_count/WARNING': 2,
+ 'memusage/max': 85618688,
+ 'memusage/startup': 85618688,
+ 'response_received_count': 20,
+ 'scheduler/dequeued': 39,
+ 'scheduler/dequeued/memory': 39,
+ 'scheduler/enqueued': 39,
+ 'scheduler/enqueued/memory': 39,
+ 'start_time': datetime.datetime(2019, 3, 15, 11, 0, 22, 680620)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'DOWNLOAD_DELAY': 1, 'SPIDER_MODULES': ['collector.spiders'], 'ROBOTSTXT_OBEY': True, 'BOT_NAME': 'collector', 'NEWSPIDER_MODULE': 'collector.spiders'}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6024
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/robots.txt> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/143817/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/164541/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/147851/>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/robots.txt> from <GET http://www.thehindu.com/robots.txt>
+WARNING: Remote certificate is not valid for hostname "www.thehindu.com"; 'www.thehindugroup.com'!='www.thehindu.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/robots.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece> from <GET http://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece> from <GET http://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece> from <GET http://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece> from <GET http://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> (referer: None)
+WARNING: Remote certificate is not valid for hostname "www.thehindu.com"; 'www.thehindugroup.com'!='www.thehindu.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece> (referer: None)
+WARNING: Remote certificate is not valid for hostname "www.thehindu.com"; 'www.thehindugroup.com'!='www.thehindu.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece> (referer: None)
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 3,
+ 'downloader/request_bytes': 11560,
+ 'downloader/request_count': 39,
+ 'downloader/request_method_count/GET': 39,
+ 'downloader/response_bytes': 671199,
+ 'downloader/response_count': 39,
+ 'downloader/response_status_count/200': 20,
+ 'downloader/response_status_count/301': 19,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 13, 0, 32, 189380),
+ 'log_count/DEBUG': 43,
+ 'log_count/INFO': 7,
+ 'log_count/WARNING': 3,
+ 'memusage/max': 85938176,
+ 'memusage/startup': 85938176,
+ 'response_received_count': 20,
+ 'scheduler/dequeued': 39,
+ 'scheduler/dequeued/memory': 39,
+ 'scheduler/enqueued': 39,
+ 'scheduler/enqueued/memory': 39,
+ 'start_time': datetime.datetime(2019, 3, 15, 12, 59, 49, 218864)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'NEWSPIDER_MODULE': 'collector.spiders', 'DOWNLOAD_DELAY': 1, 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['collector.spiders'], 'BOT_NAME': 'collector'}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.telnet.TelnetConsole']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6024
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/robots.txt> from <GET http://www.thehindu.com/robots.txt>
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/robots.txt> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/143817/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/164541/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/147851/>
+WARNING: Remote certificate is not valid for hostname "www.thehindu.com"; 'www.thehindugroup.com'!='www.thehindu.com'
+DEBUG: Crawled (200) <GET https://www.thehindu.com/robots.txt> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece> from <GET http://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece> from <GET http://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece> from <GET http://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece> from <GET http://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/Petrol-bunk-staff-call-off-stir/article17316780.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/Separate-state-for-tribals-sought/article14738496.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/mpdo-forced-to-leave-office/article6656833.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/Man-dies/article15985383.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/kejriwal-sisodia-meet-rajnath/article7627225.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/Lalu-celebrates-63rd-birthday/article16248045.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/protect-historical-monuments/article6770285.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/BJP-cadres-stage-stir/article14859354.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/ttdc-procuring-1500-trendy-life-jackets/article2481074.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-features/tp-downtown/majestic-hills/article18703484.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/hc-closes-case-against-tourism-minister/article6675006.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/wapcos-submits-report-on-godavari-pennar-linkage/article21779447.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/One-killed-100-injured-in-Valley/article14616423.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-features/tp-fridayreview/Musical-offering-to-the-Divine/article15937599.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-business/railways-awards-ge-26-b-contract/article7867632.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-karnataka/Work-on-Hospet-bypass-under-way/article15162915.ece> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece>
+DEBUG: Redirecting (301) to <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece> from <GET http://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece>
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/activists-support-medha-patkars-cause/article3144547.ece> (referer: None)
+DEBUG: Crawled (200) <GET https://www.thehindu.com/todays-paper/tp-national/tp-kerala/illegal-soil-mining-continuing-at-palora-hills-residents/article6877096.ece> (referer: None)
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 3,
+ 'downloader/request_bytes': 11560,
+ 'downloader/request_count': 39,
+ 'downloader/request_method_count/GET': 39,
+ 'downloader/response_bytes': 671291,
+ 'downloader/response_count': 39,
+ 'downloader/response_status_count/200': 20,
+ 'downloader/response_status_count/301': 19,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 13, 6, 7, 690794),
+ 'log_count/DEBUG': 43,
+ 'log_count/INFO': 7,
+ 'log_count/WARNING': 1,
+ 'memusage/max': 85708800,
+ 'memusage/startup': 85708800,
+ 'response_received_count': 20,
+ 'scheduler/dequeued': 39,
+ 'scheduler/dequeued/memory': 39,
+ 'scheduler/enqueued': 39,
+ 'scheduler/enqueued/memory': 39,
+ 'start_time': datetime.datetime(2019, 3, 15, 13, 5, 21, 151608)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'ROBOTSTXT_OBEY': True, 'NEWSPIDER_MODULE': 'collector.spiders', 'SPIDER_MODULES': ['collector.spiders'], 'DOWNLOAD_DELAY': 1, 'BOT_NAME': 'collector'}
+INFO: Enabled extensions:
+['scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6024
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/robots.txt> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/143817/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/164541/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/147851/>
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 3,
+ 'downloader/request_bytes': 234,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 1662,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 13, 10, 42, 143939),
+ 'log_count/DEBUG': 5,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85774336,
+ 'memusage/startup': 85774336,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2019, 3, 15, 13, 10, 41, 747410)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'ROBOTSTXT_OBEY': True, 'NEWSPIDER_MODULE': 'collector.spiders', 'BOT_NAME': 'collector', 'SPIDER_MODULES': ['collector.spiders'], 'DOWNLOAD_DELAY': 1}
+INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6024
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/robots.txt> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/143817/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/164541/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/147851/>
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 3,
+ 'downloader/request_bytes': 234,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 1662,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 13, 15, 10, 6353),
+ 'log_count/DEBUG': 5,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85798912,
+ 'memusage/startup': 85798912,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2019, 3, 15, 13, 15, 9, 676562)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'NEWSPIDER_MODULE': 'collector.spiders', 'DOWNLOAD_DELAY': 1, 'SPIDER_MODULES': ['collector.spiders'], 'BOT_NAME': 'collector', 'ROBOTSTXT_OBEY': True}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6024
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/robots.txt> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/143817/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/164541/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/147851/>
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 3,
+ 'downloader/request_bytes': 234,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 1662,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 13, 15, 33, 671361),
+ 'log_count/DEBUG': 5,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85676032,
+ 'memusage/startup': 85676032,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2019, 3, 15, 13, 15, 33, 364619)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: collector)
+INFO: Versions: lxml 4.2.0.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.5.2 (default, Nov 12 2018, 13:43:14) - [GCC 5.4.0 20160609], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.15.0-46-generic-x86_64-with-Ubuntu-16.04-xenial
+INFO: Overridden settings: {'DOWNLOAD_DELAY': 1, 'ROBOTSTXT_OBEY': True, 'BOT_NAME': 'collector', 'NEWSPIDER_MODULE': 'collector.spiders', 'SPIDER_MODULES': ['collector.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6024
+DEBUG: Crawled (200) <GET http://archive.indianexpress.com/robots.txt> (referer: None)
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/143817/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/164541/>
+DEBUG: Forbidden by robots.txt: <GET http://archive.indianexpress.com/Storyold/147851/>
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 3,
+ 'downloader/request_bytes': 234,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 1662,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 15, 13, 18, 53, 586875),
+ 'log_count/DEBUG': 5,
+ 'log_count/INFO': 7,
+ 'memusage/max': 85954560,
+ 'memusage/startup': 85954560,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2019, 3, 15, 13, 18, 53, 203868)}
+INFO: Spider closed (finished)

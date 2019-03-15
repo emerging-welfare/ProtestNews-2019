@@ -2,6 +2,7 @@ import scrapy
 from scrapy.utils.log import configure_logging
 import logging
 import pandas as pd
+import os
 
 class HtmlSpider(scrapy.Spider):
     name = "sp"
@@ -22,12 +23,16 @@ class HtmlSpider(scrapy.Spider):
 
         urls = pd.read_json(self.filename, orient="records", lines=True)["url"].unique().tolist()
         for url in urls:
-            yield scrapy.Request(url=url, callback=self.parse)
+            outfile = url.replace("/", "_")
+            outfile = outfile.replace(":", "_")
+            outfile = "./tmp/htmls/" + outfile
+            if os.path.isfile(outfile):
+                continue
+
+            if "scmp" not in url:
+                yield scrapy.Request(url=url, callback=self.parse, meta={"outfile":outfile})
 
     def parse(self, response):
 
-        outfile = response.url.replace("/", "_")
-        outfile = outfile.replace(":", "_")
-
-        with open("tmp/htmls/%s" %outfile , 'wb') as f:
+        with open(response.meta["outfile"] , 'wb') as f:
             f.write(response.body)

@@ -17,4 +17,4 @@ article = g.extract(raw_html=html)
 with codecs.open("tmp/texts/" + filename, "w", "utf-8") as g:
     g.write(article.cleaned_text)
 
-print("Finished : " + filename)
+print("Finished html-to-text : " + filename)

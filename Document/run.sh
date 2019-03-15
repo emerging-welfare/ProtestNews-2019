@@ -15,7 +15,7 @@ for data_file in $data_path/*.json
 do
     scrapy crawl sp -a filename="$data_file"
     python3 -W ignore getnews_selenium.py $data_file
-    
+
     for filename in tmp/htmls/http*
     do
 	ofile=$(echo "$(basename $filename)")

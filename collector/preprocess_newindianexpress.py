@@ -6,7 +6,7 @@ filename = sys.argv[1]
 with open("tmp/texts/" + filename, "r", encoding="utf-8") as f:
     text = f.read().splitlines()
 
-with open("tmp/htmls/" + filename, "rb", encoding="utf-8") as g:
+with open("tmp/htmls/" + filename, "rb") as g:
     html_string = g.read()
 
 def addnewstime(lines, html_string):
@@ -35,4 +35,9 @@ def addnewstime(lines, html_string):
 if text and any(line.strip() != "" for line in text):
     text = addnewstime(text, html_string)
     with open("tmp/texts/" + filename, "w", encoding="utf-8") as f:
-        f.write("\n".join([line.strip() if line.strip() != "" for line in text]))
+#        f.write("\n".join([line.strip() if line.strip() != "" for line in text]))
+        f.write("".join([line.strip() + "\n" if line.strip() != "" else "" for line in text])[:-2])
+
+    print("Finished cleaning : ", filename)
+else:
+    print("Problem cleaning : ", filename)
