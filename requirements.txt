@@ -1,4 +1,6 @@
 #Requirements
+#You may need these packages:
+# g++ python-dev python3-dev ant
 #Python3
 lxml==4.2.0
 pandas==0.22.0
@@ -6,5 +8,7 @@ selenium==3.141.0
 Scrapy==1.5.0
 fuzzywuzzy==0.16.0
 #Pyhton2
-python-boilerpipe==https://github.com/OsmanMutlu/python-boilerpipe # A fork of the original
-python-goose==https://github.com/OsmanMutlu/python-goose # A fork of the original
+jype1==0.6.3
+#Not available with pip:
+#python-boilerpipe==https://github.com/OsmanMutlu/python-boilerpipe # A fork of the original
+#python-goose==https://github.com/OsmanMutlu/python-goose # A fork of the original

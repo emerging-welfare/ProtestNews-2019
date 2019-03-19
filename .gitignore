@@ -1,0 +1,7 @@
+*~
+collector/tmp
+*.json
+*.csv
+collector/ghostdriver.log
+collector/log.txt
+__pycache__/

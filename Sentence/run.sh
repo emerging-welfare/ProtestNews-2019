@@ -39,8 +39,7 @@ do
 		echo "No idea what source : $ofile"
 	    fi
 	fi
-  echo 'arda'
     done
 
-    python3 $data_path/fill_in_blanks.py $data_file
+    python3 -W ignore $data_path/fill_in_blanks.py $data_file
 done
