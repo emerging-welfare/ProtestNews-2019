@@ -62,40 +62,22 @@ for url in df.url.unique().tolist():
         continue
 
     df.loc[df.url == url, ["text"]] = text
-    #print(text)
-    nonW_list = []
-    for match in re.finditer(r"\W", text):
-        nonW_list.append(match.start())
 
     first_sent = els[els.sent_num == 1].sentence.iloc[0]
-    sep = int(len(first_sent) / 2)
-    # print(first_sent)
-    # print("--")
-    # print(first_sent[sep:])
+    if len(first_sent) >= 50:
+        sep = int(len(first_sent) / 3)
+    else:
+        sep = int(len(first_sent) / 2)
 
-    #start = re.search(re.escape(first_sent[sep:]), text)
     nonW_text = re.sub(r"\W", r"", text)
-    start = re.search(re.sub(r"\W", r"", first_sent[sep:]), nonW_text)
+    start = re.search(re.sub(r"\W", r"", first_sent[len(first_sent) - sep:]), nonW_text)
     if start is None:
         nofirstmatch_count += 1
-        # df.loc[(df.url == url) & (df.sentence == "REDACTED")] = "Could Not Find!!!"
-        df = df[df.url != url]
-        continue
-
-    eom, som = get_eom(start, text)
-    # df.loc[(df.url == url) & (df.sent_num == 1), "offset"] = (max(0, som-sep-1), eom)
-    df.loc[(df.url == url) & (df.sent_num == 1), ["offset"]] = str(max(0, som-sep-1)) + "," + str(eom)
-    # print(text[som:eom+1])
-    # print("--")
-    # print(text[max(0, som-sep-1):eom+1])
-    # print("-------------------------------")
-
-    #end = re.search(re.escape(els[els["last"] == True].sentence.iloc[0]), text)
-    # end = re.search(re.escape(els[els["last"] == True].sentence.iloc[0]), text)
-    # print(start)
-    # print(end.end())
-    # df["text"] = text[start.start()-sep:end.end()-1]
-
+        df.loc[(df.url == url) & (df.sent_num == 1), ["offset"]] = "0,0" # Second sentence will contain the first sentence too.
+    else:
+        eom, som = get_eom(start, text)
+        df.loc[(df.url == url) & (df.sent_num == 1), ["offset"]] = str(max(0, som-sep-1)) + "," + str(eom)
+    
     sentences = els[(els.sent_num != 1) & (els.sentence != "REDACTED")]
     try:
         for i in range(len(sentences)):
@@ -110,29 +92,20 @@ for url in df.url.unique().tolist():
                 match = re.search(re.sub(r"\W", r"", sent.sentence), nonW_text)
                 eom, som = get_eom(match, text)
 
-            # sentences.loc[sentences.sentence == sent.sentence, "offset"] = (som, min(eom, len(text)))
             df.loc[(df.url == url) & (df.sent_num == sent.sent_num), ["offset"]] = str(som) + "," + str(min(eom, len(text)))
     except:
         noanymatch_count =+ 1
-        # df.loc[(df.url == url) & (df.sentence == "REDACTED")] = "Could Not Find!!!"
         df = df[df.url != url]
         continue
-
-    # df.loc[(df.url == url) & (df.sent_num != 1) & (df.sentence != "REDACTED")] = sentences
 
 print("Total doc count : ", total)
 print("No doc count : ", nodoc_count)
 print("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
-print("No any match count : ", noanymatch_count) # If any odd numbered sentence other than first cannot be found in downloaded text
+print("No match count : ", noanymatch_count) # If any odd numbered sentence other than first cannot be found in downloaded text
 
 df = df[df.text.str.strip() != ""]
 
 df.loc[df.sentence == "REDACTED"] = df[df.sentence == "REDACTED"].apply(lambda x: fill_blank(x, df[df.url == x.url]), axis=1)
-
-# for i in range(len(df)):
-#     row = df.iloc[i]
-#     if row.sentence == "REDACTED":
-#         df.loc[(df.url == row.url) & (df.sent_num == row.sent_num), ["sentence"]] = fill_blank(row, df[df.url == row.url])
 
 df = df.drop(["text", "offset"], axis=1)
 df.to_json(re.sub(r"\.json$", r"_filled.json", filename), orient="records", lines=True, force_ascii=False)

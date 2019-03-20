@@ -15,7 +15,7 @@ for url in df.url.unique().tolist():
     try:
         with open("tmp/texts/" + text_file, "r", encoding="utf-8") as f:
             text = f.read()
-        df.loc[df.url == url, "text"] = text
+        df.loc[df.url == url, ["text"]] = text
     except:
 #        print("Doc not found! : ", text_file)
         pass

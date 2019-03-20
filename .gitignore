@@ -4,4 +4,6 @@ collector/tmp
 *.csv
 collector/ghostdriver.log
 collector/log.txt
+Sentence/log.txt
+Document/log.txt
 __pycache__/
