@@ -1,6 +1,7 @@
 import os
 import pandas as pd
-root = "ProtestNews-2019/"
+import re
+root = ""
 target_dir = "collector/tmp/texts"
 json_path = "Sentence/trial.json"
 output = "sentence_log"
@@ -12,14 +13,17 @@ def check_url(url1,url_list):
             return True
     return False
 
+def map_name(filename):
+    url = re.sub(r"___", r"://", filename)
+    url = re.sub(r"_", r"/", url)
+    return url
 
 def detect_miss(target_dir,jsonfile,log_file):
     misses = []
     count = 0
     df = pd.read_json(jsonfile,orient = "records", lines = True)
     urls = set(df.get("url"))
-    all_files = os.listdir(target_dir)
-    print(all_files[:10])
+    all_files = list(map(lambda x: map_name(x),os.listdir(target_dir)))
     for url in urls:
         if not check_url(url,all_files):
             if url not in misses:
