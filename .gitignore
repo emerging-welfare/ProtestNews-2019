@@ -2,9 +2,14 @@
 collector/tmp
 *.json
 *.csv
-collector/ghostdriver.log
+*.log
 collector/log.txt
-__pycache__/Document/python-goose/
+Sentence/log.txt
+Document/log.txt
+__pycache__/
+Document/python-goose/
 Document/python-boilerpipe/
 python-boilerpipe/
 python-goose/
+Requirements
+missing_news_urls*
