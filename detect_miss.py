@@ -54,11 +54,17 @@ def detect_miss(target_dir,jsonfile,filledjsonfile,log_file):
     print("Missing {} out of {} samples in total ".format(fi_sample_size , or_sample_size))
     print("Could not download {} news in total out of {} news".format(count,len(all_urls)))
     print("Writing missing news' urls into: %s"%log_file)
+    logging.info("Missing {} out of {} news in filled json ".format(len(filled_misses) , len(all_urls)))
+    logging.info("Missing {} out of {} samples in total ".format(fi_sample_size , or_sample_size))
+    logging.info("Could not download {} news in total out of {} news".format(count,len(all_urls)))
+    logging.info("Writing missing news' urls into: %s"%log_file)
     outf = open(log_file,"w")
     for miss in misses:
         outf.write(miss)
         outf.write("\n")
     outf.close()
 if __name__ == "__main__":
-    logging.basicConfig(filename='sentence_level_logging.log', filemode = "w",format='%(name)s - %(levelname)s - %(message)s')
+    log_file = 'detect_miss.log'
+    logging.basicConfig(level=logging.INFO,filename=log_file, filemode = "w",format='%(name)s - %(levelname)s - %(message)s')
+    print("Logging information stored in : %s"%log_file)
     detect_miss(os.path.join(root,target_dir),os.path.join(root,json_path), os.path.join(root,json_filled_path),output)

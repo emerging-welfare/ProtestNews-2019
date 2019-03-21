@@ -3,7 +3,9 @@ import sys
 import re
 import logging
 log_file = 'sentence_logging.log'
-logging.basicConfig(filename=log_file, filemode = "w",format='%(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO,filename=log_file, filemode = "w",format='%(name)s - %(levelname)s - %(message)s')
+print("Logging information stored in : %s"%log_file)
+
 # We basically remove all the non-alphanumerical characters from our string and substring, then do the match. Later we map the resulting offsets to the original string we were searching.
 def map_to_withW(i, j, text):
     tmp = re.findall(r"\W", text[i:j])
@@ -123,7 +125,6 @@ for url in df.url.unique().tolist():
         continue
 
     # df.loc[(df.url == url) & (df.sent_num != 1) & (df.sentence != "REDACTED")] = sentences
-print("Logging information stored in : %s"%log_file)
 print("Total doc count : ", total)
 print("No doc count : ", nodoc_count)
 print("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
