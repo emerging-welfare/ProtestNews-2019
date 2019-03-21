@@ -1,6 +1,10 @@
 import pandas as pd
 import sys
 import re
+import logging
+log_file = 'sentence_logging.log'
+logging.basicConfig(level=logging.INFO,filename=log_file, filemode = "w",format='%(name)s - %(levelname)s - %(message)s')
+print("Logging information stored in : %s"%log_file)
 
 # We basically remove all the non-alphanumerical characters from our string and substring, then do the match. Later we map the resulting offsets to the original string we were searching.
 def map_to_withW(i, j, text):
@@ -59,6 +63,7 @@ for url in df.url.unique().tolist():
             text = f.read()
     except:
         nodoc_count += 1
+        logging.warning("Could not find news article with following url : %s"%url)
         continue
 
     df.loc[df.url == url, ["text"]] = text
@@ -77,7 +82,7 @@ for url in df.url.unique().tolist():
     else:
         eom, som = get_eom(start, text)
         df.loc[(df.url == url) & (df.sent_num == 1), ["offset"]] = str(max(0, som-sep-1)) + "," + str(eom)
-    
+
     sentences = els[(els.sent_num != 1) & (els.sentence != "REDACTED")]
     try:
         for i in range(len(sentences)):
@@ -94,6 +99,7 @@ for url in df.url.unique().tolist():
 
             df.loc[(df.url == url) & (df.sent_num == sent.sent_num), ["offset"]] = str(som) + "," + str(min(eom, len(text)))
     except:
+        logging.warning("Could not any match in following url : %s"%url)
         noanymatch_count =+ 1
         df = df[df.url != url]
         continue
@@ -101,7 +107,12 @@ for url in df.url.unique().tolist():
 print("Total doc count : ", total)
 print("No doc count : ", nodoc_count)
 print("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
-print("No match count : ", noanymatch_count) # If any odd numbered sentence other than first cannot be found in downloaded text
+
+print("No any match count : ", noanymatch_count) # If any odd numbered sentence other than first cannot be found in downloaded text
+logging.info("Total doc count : ", total)
+logging.info("No doc count : ", nodoc_count)
+logging.info("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
+logging.info("No any match count : ", noanymatch_count)
 
 df = df[df.text.str.strip() != ""]
 

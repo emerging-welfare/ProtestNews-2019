@@ -14,9 +14,10 @@ fi
 for data_file in $data_path/*.json
 do
     if [[ $data_file == *"_filled.json" ]]; then
-	continue
+       continue
     fi
-    echo "Working for $data_file" | tee -a $data_path/log.txt
+    echo "Working for $data_file"
+    
     scrapy crawl sp -a filename="$data_file"
     python3 -W ignore getnews_selenium.py $data_file
 
