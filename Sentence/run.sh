@@ -17,6 +17,7 @@ do
        continue
     fi
     echo "Working for $data_file"
+    
     scrapy crawl sp -a filename="$data_file"
     python3 -W ignore getnews_selenium.py $data_file
 
@@ -25,25 +26,25 @@ do
 	ofile=$(echo "$(basename $filename)")
 	if [ ! -f tmp/texts/$ofile ]; then
 	    if [[ $ofile == *"timesofindia"* ]]; then
-		python3 justext_gettext.py $ofile
-		python3 preprocess_timesofindia.py $ofile
+		python3 justext_gettext.py $ofile | tee -a $data_path/log.txt
+		python3 preprocess_timesofindia.py $ofile | tee -a $data_path/log.txt
 	    elif [[ $ofile == *"newindianexpress"* ]]; then
-		python2 goose_gettext.py $ofile
-		python3 preprocess_newindianexpress.py $ofile
+		python2 goose_gettext.py $ofile | tee -a $data_path/log.txt
+		python3 preprocess_newindianexpress.py $ofile | tee -a $data_path/log.txt
 	    elif [[ $ofile == *"indianexpress"* ]]; then
-		python2 goose_gettext.py $ofile
-		python3 preprocess_indianexpress.py $ofile
+		python2 goose_gettext.py $ofile | tee -a $data_path/log.txt
+		python3 preprocess_indianexpress.py $ofile | tee -a $data_path/log.txt
 	    elif [[ $ofile == *"thehindu"* ]]; then
-		python2 boilerpipe_gettext.py $ofile
-		python3 preprocess_thehindu.py $ofile
+		python2 boilerpipe_gettext.py $ofile | tee -a $data_path/log.txt
+		python3 preprocess_thehindu.py $ofile | tee -a $data_path/log.txt
 	    elif [[ $ofile == *"scmp"* ]]; then
-		python2 boilerpipe_gettext.py $ofile
-		python3 preprocess_scmp.py $ofile
+		python2 boilerpipe_gettext.py $ofile | tee -a $data_path/log.txt
+		python3 preprocess_scmp.py $ofile | tee -a $data_path/log.txt
 	    else
-		echo "No idea what source : $ofile"
+		echo "No idea what source : $ofile" | tee -a $data_path/log.txt
 	    fi
 	fi
     done
 
-    python3 -W ignore $data_path/fill_in_blanks.py $data_file
+    python3 -W ignore $data_path/fill_in_blanks.py $data_file | tee -a $data_path/log.txt
 done

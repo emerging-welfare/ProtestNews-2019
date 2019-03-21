@@ -107,11 +107,13 @@ for url in df.url.unique().tolist():
 print("Total doc count : ", total)
 print("No doc count : ", nodoc_count)
 print("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
+
 print("No any match count : ", noanymatch_count) # If any odd numbered sentence other than first cannot be found in downloaded text
 logging.info("Total doc count : ", total)
 logging.info("No doc count : ", nodoc_count)
 logging.info("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
 logging.info("No any match count : ", noanymatch_count)
+
 df = df[df.text.str.strip() != ""]
 
 df.loc[df.sentence == "REDACTED"] = df[df.sentence == "REDACTED"].apply(lambda x: fill_blank(x, df[df.url == x.url]), axis=1)
