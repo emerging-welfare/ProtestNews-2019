@@ -1,7 +1,9 @@
 import pandas as pd
 import sys
 import re
-
+import logging
+log_file = 'sentence_logging.log'
+logging.basicConfig(filename=log_file, filemode = "w",format='%(name)s - %(levelname)s - %(message)s')
 # We basically remove all the non-alphanumerical characters from our string and substring, then do the match. Later we map the resulting offsets to the original string we were searching.
 def map_to_withW(i, j, text):
     tmp = re.findall(r"\W", text[i:j])
@@ -59,6 +61,7 @@ for url in df.url.unique().tolist():
             text = f.read()
     except:
         nodoc_count += 1
+        logging.warning("Could not find news article with following url : %s"%url)
         continue
 
     df.loc[df.url == url, ["text"]] = text
@@ -102,7 +105,7 @@ for url in df.url.unique().tolist():
             sent = sentences.iloc[i]
             if len(sent.sentence) >= 50: # Arbitrary number. If the sentence is too small, use the whole sentence to match.
                 sep = int(len(sent.sentence) / 5)
-                match = re.search(re.sub(r"\W", r"", sent.sentence[:sep]), nonW_text)
+                match = re.search(re .sub(r"\W", r"", sent.sentence[:sep]), nonW_text)
                 som = get_som(match, text)
                 match = re.search(re.sub(r"\W", r"", sent.sentence[len(sent.sentence)-sep:]), nonW_text)
                 eom, _ = get_eom(match, text)
@@ -113,18 +116,22 @@ for url in df.url.unique().tolist():
             # sentences.loc[sentences.sentence == sent.sentence, "offset"] = (som, min(eom, len(text)))
             df.loc[(df.url == url) & (df.sent_num == sent.sent_num), ["offset"]] = str(som) + "," + str(min(eom, len(text)))
     except:
+        logging.warning("Could not any match in following url : %s"%url)
         noanymatch_count =+ 1
         # df.loc[(df.url == url) & (df.sentence == "REDACTED")] = "Could Not Find!!!"
         df = df[df.url != url]
         continue
 
     # df.loc[(df.url == url) & (df.sent_num != 1) & (df.sentence != "REDACTED")] = sentences
-
+print("Logging information stored in : %s"%log_file)
 print("Total doc count : ", total)
 print("No doc count : ", nodoc_count)
 print("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
 print("No any match count : ", noanymatch_count) # If any odd numbered sentence other than first cannot be found in downloaded text
-
+logging.info("Total doc count : ", total)
+logging.info("No doc count : ", nodoc_count)
+logging.info("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
+logging.info("No any match count : ", noanymatch_count)
 df = df[df.text.str.strip() != ""]
 
 df.loc[df.sentence == "REDACTED"] = df[df.sentence == "REDACTED"].apply(lambda x: fill_blank(x, df[df.url == x.url]), axis=1)
