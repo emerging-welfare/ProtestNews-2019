@@ -1,17 +1,27 @@
 import os
 import pandas as pd
 root = "ProtestNews-2019/"
-target_dir = "collector/tmp"
+target_dir = "collector/tmp/texts"
 json_path = "Sentence/trial.json"
 output = "sentence_log"
+
+##update checking according to Osman's transformation
+def check_url(url1,url_list):
+    for url in url_list:
+        if url1==url:## this will be changed with Osman's code
+            return True
+    return False
+
+
 def detect_miss(target_dir,jsonfile,log_file):
     misses = []
     count = 0
     df = pd.read_json(jsonfile,orient = "records", lines = True)
-    urls = df.get("url")
+    urls = set(df.get("url"))
     all_files = os.listdir(target_dir)
+    print(all_files[:10])
     for url in urls:
-        if url not in all_files:
+        if not check_url(url,all_files):
             if url not in misses:
                 misses.append(url)
                 count+=1
