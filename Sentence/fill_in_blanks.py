@@ -104,15 +104,14 @@ for url in df.url.unique().tolist():
         df = df[df.url != url]
         continue
 
-print("Total doc count : ", total)
-print("No doc count : ", nodoc_count)
-print("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
-
-print("No any match count : ", noanymatch_count) # If any odd numbered sentence other than first cannot be found in downloaded text
-logging.info("Total doc count : ", total)
-logging.info("No doc count : ", nodoc_count)
-logging.info("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
-logging.info("No any match count : ", noanymatch_count)
+#print("Total doc count : ", total)
+#print("No doc count : ", nodoc_count)
+#print("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
+#print("No any match count : ", noanymatch_count) # If any odd numbered sentence other than first cannot be found in downloaded text
+logging.info("Total doc count : %d", %total)
+logging.info("No doc count : %d", %nodoc_count)
+logging.info("No first match count %d: ", %nofirstmatch_count) # If the first sentence cannot be found in downloaded text
+logging.info("No any match count : %d", %noanymatch_count)
 
 df = df[df.text.str.strip() != ""]
 
