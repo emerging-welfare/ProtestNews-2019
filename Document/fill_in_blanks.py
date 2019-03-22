@@ -24,7 +24,7 @@ for url in df.url.unique().tolist():
         df.loc[df.url == url, ["text"]] = text
     except:
         count +=1
-        logging.warning("Could not download following url:" %s)
+        logging.warning("Could not download following url: %s" %url)
 
 print("Could not download {} urls out of {}".format(count,total))
 logging.info("Could not download {} urls out of {}".format(count,total))
