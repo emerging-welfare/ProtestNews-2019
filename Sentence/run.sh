@@ -10,12 +10,17 @@ fi
 if [ ! -d tmp/texts ]; then
     mkdir tmp/texts
 fi
+if [ ! -d ../output ]; then
+    mkdir ../output
+    mkdir ../output/Sentence
+    mkdir ../output/Document
+fi
 
 for data_file in $data_path/*.json
 do
-    if [[ $data_file == *"_filled.json" ]]; then
-       continue
-    fi
+    # if [[ $data_file == *"_filled.json" ]]; then
+    #    continue
+    # fi
     echo "Working for $data_file"
     
     scrapy crawl sp -a filename="$data_file"
@@ -26,25 +31,25 @@ do
 	ofile=$(echo "$(basename $filename)")
 	if [ ! -f tmp/texts/$ofile ]; then
 	    if [[ $ofile == *"timesofindia"* ]]; then
-		python3 justext_gettext.py $ofile | tee -a $data_path/log.txt
-		python3 preprocess_timesofindia.py $ofile | tee -a $data_path/log.txt
+		python3 justext_gettext.py $ofile
+		python3 preprocess_timesofindia.py $ofile
 	    elif [[ $ofile == *"newindianexpress"* ]]; then
-		python2 goose_gettext.py $ofile | tee -a $data_path/log.txt
-		python3 preprocess_newindianexpress.py $ofile | tee -a $data_path/log.txt
+		python2 goose_gettext.py $ofile
+		python3 preprocess_newindianexpress.py $ofile
 	    elif [[ $ofile == *"indianexpress"* ]]; then
-		python2 goose_gettext.py $ofile | tee -a $data_path/log.txt
-		python3 preprocess_indianexpress.py $ofile | tee -a $data_path/log.txt
+		python2 goose_gettext.py $ofile
+		python3 preprocess_indianexpress.py $ofile
 	    elif [[ $ofile == *"thehindu"* ]]; then
-		python2 boilerpipe_gettext.py $ofile | tee -a $data_path/log.txt
-		python3 preprocess_thehindu.py $ofile | tee -a $data_path/log.txt
+		python2 boilerpipe_gettext.py $ofile
+		python3 preprocess_thehindu.py $ofile
 	    elif [[ $ofile == *"scmp"* ]]; then
-		python2 boilerpipe_gettext.py $ofile | tee -a $data_path/log.txt
-		python3 preprocess_scmp.py $ofile | tee -a $data_path/log.txt
+		python2 boilerpipe_gettext.py $ofile
+		python3 preprocess_scmp.py $ofile
 	    else
-		echo "No idea what source : $ofile" | tee -a $data_path/log.txt
+		echo "No idea what source : $ofile"
 	    fi
 	fi
     done
 
-    python3 -W ignore $data_path/fill_in_blanks.py $data_file | tee -a $data_path/log.txt
+    python3 -W ignore $data_path/fill_in_blanks.py $data_file
 done

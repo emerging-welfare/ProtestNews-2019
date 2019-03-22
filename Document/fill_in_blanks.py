@@ -28,4 +28,4 @@ for url in df.url.unique().tolist():
 
 print("Could not download {} urls out of {}".format(count,total))
 logging.info("Could not download {} urls out of {}".format(count,total))
-df.to_json(re.sub(r"\.json$", r"_filled.json", filename), orient="records", lines=True, force_ascii=False)
+df.to_json(re.sub(r"\/(\w+)\/(\w+)\.json$", r"/output/\g<1>/\g<2>_filled.json", filename), orient="records", lines=True, force_ascii=False)

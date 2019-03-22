@@ -10,13 +10,19 @@ fi
 if [ ! -d tmp/texts ]; then
     mkdir tmp/texts
 fi
+if [ ! -d ../output ]; then
+    mkdir ../output
+    mkdir ../output/Sentence
+    mkdir ../output/Document
+fi
 
 for data_file in $data_path/*.json
 do
-    if [[ $data_file == *"_filled.json" ]]; then
-	continue
-    fi
-
+    # if [[ $data_file == *"_filled.json" ]]; then
+    # 	 continue
+    # fi
+    echo "Working for $data_file"
+    
     scrapy crawl sp -a filename="$data_file"
     python3 -W ignore getnews_selenium.py $data_file
 
@@ -45,5 +51,5 @@ do
 	fi
     done
 
-    python3 $data_path/fill_in_blanks.py $data_file
+    python3 -W ignore $data_path/fill_in_blanks.py $data_file
 done

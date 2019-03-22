@@ -10,5 +10,8 @@ For python2 requirements, run -> `pip2 install -r requirements2.txt` \
 For python3 requirements, run -> `pip3 install -r requirements3.txt`
 
 ### Logs
-You can find the log file for scrapy and selenium as ProtestNews-2019/collector/log.txt and ProtestNews-2019/collector/ghostdriver.log respectively.\
-For the log file of run.sh, you can check your current folder (Sentence or Document).
+You can find the log file for scrapy and selenium as `collector/log.txt` and `collector/ghostdriver.log` respectively.\
+For the log file of run.sh of the specific task (Document, Sentence or Token), you can check the `collector/{task_name}_logging.log`
+
+### Outputs
+For the output files, check under the `output/{task_name}` folder for `{data_set}_filled.json` files.
