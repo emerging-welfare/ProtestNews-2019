@@ -58,7 +58,7 @@ for url in df.url.unique().tolist():
     els = df[df.url == url]
     text_file = re.sub(r":\/\/", r"___", url)
     text_file = re.sub(r"\/", r"_", text_file)
-    #print(text_file)
+
     try:
         with open("tmp/texts/" + text_file, "r", encoding="utf-8") as f:
             text = f.read()
@@ -87,7 +87,7 @@ for url in df.url.unique().tolist():
 
     sentences = els[(els.sent_num != 1) & (els.sentence != "REDACTED")]
 
-    # The excluded urls are mainly coming from this try except. Need to solve this issue before release.
+    # !!! The excluded urls are mainly coming from this try except. Need to solve this issue before release. !!!
     try:
         for i in range(len(sentences)):
             sent = sentences.iloc[i]
@@ -108,10 +108,6 @@ for url in df.url.unique().tolist():
         df = df[df.url != url]
         continue
 
-# print("Total doc count : ", total)
-# print("No doc count : ", nodoc_count)
-# print("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
-# print("No any match count : ", noanymatch_count) # If any odd numbered sentence other than first cannot be found in downloaded text
 logging.info("Total doc count : %d" %total)
 logging.info("No doc count : %d" %nodoc_count)
 logging.info("No first match count %d: " %nofirstmatch_count) # If the first sentence cannot be found in downloaded text

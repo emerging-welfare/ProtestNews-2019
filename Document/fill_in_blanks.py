@@ -8,9 +8,11 @@ logging.basicConfig(level=logging.INFO,filename=log_file, filemode = "w",format=
 print("Logging information stored in : %s"%log_file)
 
 filename = sys.argv[1]
+
 miss_file  = filename+"_missing_files"
 miss_write = open(miss_file,"w")
 print("Missing urls reported in : %s" %miss_file)
+
 df = pd.read_json(filename, orient="records", lines=True)
 df["text"] = ""
 count = 0
@@ -28,7 +30,9 @@ for url in df.url.unique().tolist():
         count +=1
         miss_write.write(url+"\n")
         logging.warning("Could not download following url: %s" %url)
+
 miss_write.close()
 print("Could not download {} urls out of {}".format(count,total))
 logging.info("Could not download {} urls out of {}".format(count,total))
+
 df.to_json(re.sub(r"\/(\w+)\/(\w+)\.json$", r"/output/\g<1>/\g<2>_filled.json", filename), orient="records", lines=True, force_ascii=False)
