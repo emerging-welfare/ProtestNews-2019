@@ -12,4 +12,11 @@ Document/python-boilerpipe/
 python-boilerpipe/
 python-goose/
 Requirements
+<<<<<<< HEAD
 missing_news_urls*201903221045_dev.solution 201903221045_test.solution 201903221045_train.solution
+=======
+missing_news_urls*
+201903221045_dev.solution
+201903221045_test.solution
+201903221045_train.solution
+>>>>>>> 357d338b0cb66f3394fa1cf791866a0788540916

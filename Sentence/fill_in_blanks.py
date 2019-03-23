@@ -2,6 +2,7 @@ import pandas as pd
 import sys
 import re
 import logging
+
 log_file = 'sentence_logging.log'
 logging.basicConfig(level=logging.INFO,filename=log_file, filemode = "w",format='%(name)s - %(levelname)s - %(message)s')
 print("Logging information stored in : %s"%log_file)
@@ -57,12 +58,13 @@ for url in df.url.unique().tolist():
     els = df[df.url == url]
     text_file = re.sub(r":\/\/", r"___", url)
     text_file = re.sub(r"\/", r"_", text_file)
-    #print(text_file)
+
     try:
         with open("tmp/texts/" + text_file, "r", encoding="utf-8") as f:
             text = f.read()
     except:
         nodoc_count += 1
+        df = df[df.url != url]
         logging.warning("Could not find news article with following url : %s"%url)
         continue
 
@@ -84,6 +86,8 @@ for url in df.url.unique().tolist():
         df.loc[(df.url == url) & (df.sent_num == 1), ["offset"]] = str(max(0, som-sep-1)) + "," + str(eom)
 
     sentences = els[(els.sent_num != 1) & (els.sentence != "REDACTED")]
+
+    # !!! The excluded urls are mainly coming from this try except. Need to solve this issue before release. !!!
     try:
         for i in range(len(sentences)):
             sent = sentences.iloc[i]
@@ -100,14 +104,17 @@ for url in df.url.unique().tolist():
             df.loc[(df.url == url) & (df.sent_num == sent.sent_num), ["offset"]] = str(som) + "," + str(min(eom, len(text)))
     except:
         logging.warning("Could not any match in following url : %s"%url)
-        noanymatch_count =+ 1
+        noanymatch_count += 1
         df = df[df.url != url]
         continue
 
+<<<<<<< HEAD
 #print("Total doc count : ", total)
 #print("No doc count : ", nodoc_count)
 #print("No first match count : ", nofirstmatch_count) # If the first sentence cannot be found in downloaded text
 #print("No any match count : ", noanymatch_count) # If any odd numbered sentence other than first cannot be found in downloaded text
+=======
+>>>>>>> 357d338b0cb66f3394fa1cf791866a0788540916
 logging.info("Total doc count : %d" %total)
 logging.info("No doc count : %d" %nodoc_count)
 logging.info("No first match count %d: " %nofirstmatch_count) # If the first sentence cannot be found in downloaded text
@@ -118,4 +125,4 @@ df = df[df.text.str.strip() != ""]
 df.loc[df.sentence == "REDACTED"] = df[df.sentence == "REDACTED"].apply(lambda x: fill_blank(x, df[df.url == x.url]), axis=1)
 
 df = df.drop(["text", "offset"], axis=1)
-df.to_json(re.sub(r"\.json$", r"_filled.json", filename), orient="records", lines=True, force_ascii=False)
+df.to_json(re.sub(r"\/(\w+)\/(\w+)\.json$", r"/output/\g<1>/\g<2>_filled.json", filename), orient="records", lines=True, force_ascii=False)

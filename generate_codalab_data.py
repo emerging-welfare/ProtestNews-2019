@@ -10,16 +10,19 @@ root_folder = "/Users/ardaakdemir/Desktop/koc/bitbucket_repo/corpus/Document/Pro
 def generatecodalabdata(root_folder):
     json_file_names = glob.glob(os.path.join(root_folder,"*.json"))
     ## i love using map and lambda
-    data_file_names = list(map(lambda x : x[len(root_folder)+1:-4]+"solution",json_file_names))
-    for of,jf in zip(data_file_names,json_file_names):
-        print("Generating data for %s"%jf[len(root_folder)+1:])
+    sol_file_names = list(map(lambda x : x[len(root_folder)+1:-4]+"solution",json_file_names))
+    data_file_names = list(map(lambda x : x[len(root_folder)+1:-4]+"data",json_file_names))
+    for o2f,of,jf in zip(data_file_names,sol_file_names,json_file_names):
         df = pd.read_json(jf,orient= "records",lines=True)
-        d_out = open(of,"w")
+        d_out  = open(of,"w")
+        dd_out = open(o2f,"w")
         for row in df.iterrows():
             row_id = str(row[1]["id"])
             label =  str(row[1]["label"])
             d_out.write(row_id+"\t"+label+"\n")
+            dd_out.write(row_id+"\n")
         d_out.close()
+        dd_out.close()
 
 if __name__ == "__main__":
     path_to_jsons = root_folder
