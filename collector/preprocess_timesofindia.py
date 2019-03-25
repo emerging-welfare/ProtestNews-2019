@@ -90,7 +90,7 @@ if text:
         text = deletesamesubstr(text)
         if text:
             with open("tmp/texts/" + filename, "w", encoding="utf-8") as f:
-                f.write("".join([line.strip() + "\n" if line.strip() != "" else "" for line in text])[:-2])
+                f.write("".join([line.strip() + "\n" if line.strip() != "" else "" for line in text])[:-1])
 
     print("Finished cleaning : ", filename)
 else:

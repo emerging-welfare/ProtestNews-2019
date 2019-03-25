@@ -18,13 +18,21 @@ fi
 
 for data_file in $data_path/*.json
 do
-    # if [[ $data_file == *"_filled.json" ]]; then
-    #    continue
-    # fi
     echo "Working for $data_file"
-    
-    scrapy crawl sp -a filename="$data_file"
-    python3 -W ignore getnews_selenium.py $data_file
+
+    stale_count=0
+    file_count=$(ls tmp/htmls | wc -l)
+    while [ $stale_count -lt 3 ]; do
+	scrapy crawl sp -a filename="$data_file"
+	python3 -W ignore getnews_selenium.py $data_file
+
+	new_file_count=$(ls tmp/htmls | wc -l)
+	if [ $new_file_count == $file_count ]; then
+	    let "stale_count+=1"
+	else
+	    file_count=$new_file_count
+	fi
+    done
 
     for filename in tmp/htmls/http*
     do
