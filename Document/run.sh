@@ -24,7 +24,7 @@ do
     file_count=$(ls tmp/htmls | wc -l)
     while [ $stale_count -lt 3 ]; do
 	scrapy crawl sp -a filename="$data_file"
-	python3 -W ignore getnews_selenium.py $data_file
+	# python3 -W ignore getnews_selenium.py $data_file
 
 	new_file_count=$(ls tmp/htmls | wc -l)
 	if [ $new_file_count == $file_count ]; then
