@@ -3,6 +3,8 @@ from scrapy.utils.log import configure_logging
 import logging
 import pandas as pd
 import os
+# . is important here, it is a relative import
+from .convert_scmp_url import is_scmp_url, convert
 
 class HtmlSpider(scrapy.Spider):
     name = "sp"
@@ -29,8 +31,10 @@ class HtmlSpider(scrapy.Spider):
             if os.path.isfile(outfile):
                 continue
 
-            if "scmp" not in url:
-                yield scrapy.Request(url=url, callback=self.parse, meta={"outfile":outfile})
+            if is_scmp_url(url):
+                url = convert(url)
+            
+            yield scrapy.Request(url=url, callback=self.parse, meta={"outfile":outfile})
 
     def parse(self, response):
 
