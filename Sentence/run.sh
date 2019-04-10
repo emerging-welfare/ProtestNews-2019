@@ -1,3 +1,4 @@
+#!/bin/bash
 data_path=$(pwd)
 cd ../collector
 
@@ -16,9 +17,19 @@ if [ ! -d ../output ]; then
     mkdir ../output/Document
 fi
 
+if [ $(ls $data_path/*.json | wc -l) -lt 1 ]; then
+    echo "Please copy all shared json files to the folder."
+    exit 0
+fi
+
 for data_file in $data_path/*.json
 do
+    json_file=$(echo "$data_file" | sed -r "s/^.*\/(\w+\/\w+)\.json$/\1_filled.json/")
     echo "Working for $data_file"
+    if [ -f ../output/$json_file ]; then
+       echo "Already done $data_file"
+       continue
+    fi
 
     stale_count=0
     file_count=$(ls tmp/htmls | wc -l)
