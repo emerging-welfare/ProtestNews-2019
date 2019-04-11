@@ -49,6 +49,8 @@ df = pd.read_json(filename, orient="records", lines=True)
 df["offset"] = ""
 df["text"] = ""
 
+not_unique_fs = 0
+not_unique = 0
 nodoc_count = 0
 nofirstmatch_count = 0
 nomatch_count = 0
@@ -77,6 +79,9 @@ for url in df.url.unique().tolist():
         sep = int(len(first_sent) / 2)
 
     nonW_text = re.sub(r"\W", r"", text)
+    if len(re.findall(re.sub(r"\W", r"", first_sent[len(first_sent) - sep:]), nonW_text)) > 1:
+        not_unique_fs += 1
+
     start = re.search(re.sub(r"\W", r"", first_sent[len(first_sent) - sep:]), nonW_text)
     if start is None:
         nofirstmatch_count += 1
@@ -90,15 +95,10 @@ for url in df.url.unique().tolist():
     try:
         for i in range(len(sentences)):
             sent = sentences.iloc[i]
-            if len(sent.sentence) >= 50: # Arbitrary number. If the sentence is too small, use the whole sentence to match.
-                sep = int(len(sent.sentence) / 5)
-                match = re.search(re.sub(r"\W", r"", sent.sentence[:sep]), nonW_text)
-                som = get_som(match, text)
-                match = re.search(re.sub(r"\W", r"", sent.sentence[len(sent.sentence)-sep:]), nonW_text)
-                eom, _ = get_eom(match, text)
-            else:
-                match = re.search(re.sub(r"\W", r"", sent.sentence), nonW_text)
-                eom, som = get_eom(match, text)
+            match = re.search(re.sub(r"\W", r"", sent.sentence), nonW_text)
+            eom, som = get_eom(match, text)
+            if len(re.findall(re.sub(r"\W", r"", sent.sentence), nonW_text)) > 1:
+                not_unique += 1
 
             df.loc[(df.url == url) & (df.sent_num == sent.sent_num), ["offset"]] = str(som) + "," + str(min(eom, len(text)))
     except:
@@ -110,6 +110,8 @@ logging.info("Total doc count : %d" %total)
 logging.info("No doc count : %d" %nodoc_count) # If there is no text file or the file is empty for doc.
 logging.info("No first match count : %d -> This is OK!" %nofirstmatch_count) # If the first sentence cannot be found in downloaded text. This is handled by setting second sentence's offset start to 0.
 logging.info("No match count : %d" %nomatch_count) # If any sentence other than first sentence could not be matched. This is not handled.
+logging.info("Not unique sentence match count in first sentence : %d" %not_unique_fs)
+logging.info("Not unique sentence match count : %d" %not_unique)
 
 df = df[df.text.str.strip() != ""]
 
