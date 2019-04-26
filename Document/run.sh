@@ -64,6 +64,9 @@ do
 	    elif [[ $ofile == *"scmp"* ]]; then
 		python2 boilerpipe_gettext.py $ofile
 		python3 preprocess_scmp.py $ofile
+		elif [[ $ofile == *"people"* ]]; then # People's Chine
+		python2 boilerpipe_gettext.py $ofile
+		python3 preprocess_people.py $ofile
 	    else
 		echo "No idea what source : $ofile"
 	    fi
