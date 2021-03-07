@@ -13,7 +13,8 @@ if [ ! -d tmp/texts ]; then
 fi
 if [ ! -d ../output ]; then
     mkdir ../output
-    mkdir ../output/Sentence
+fi
+if [ ! -d ../output/Document ]; then
     mkdir ../output/Document
 fi
 
@@ -50,23 +51,27 @@ do
 	ofile=$(echo "$(basename $filename)")
 	if [ ! -f tmp/texts/$ofile ]; then
 	    if [[ $ofile == *"timesofindia"* ]]; then
-		python3 justext_gettext.py $ofile
-		python3 preprocess_timesofindia.py $ofile
+		python timesofindia.py $ofile
 	    elif [[ $ofile == *"newindianexpress"* ]]; then
-		python2 goose_gettext.py $ofile
-		python3 preprocess_newindianexpress.py $ofile
+		python newindianexpress.py $ofile
 	    elif [[ $ofile == *"indianexpress"* ]]; then
-		python2 goose_gettext.py $ofile
-		python3 preprocess_indianexpress.py $ofile
+		python indianexpress.py $ofile
 	    elif [[ $ofile == *"thehindu"* ]]; then
-		python2 boilerpipe_gettext.py $ofile
-		python3 preprocess_thehindu.py $ofile
+		python thehindu.py $ofile
 	    elif [[ $ofile == *"scmp"* ]]; then
-		python2 boilerpipe_gettext.py $ofile
-		python3 preprocess_scmp.py $ofile
-		elif [[ $ofile == *"people"* ]]; then # People's Chine
-		python2 boilerpipe_gettext.py $ofile
-		python3 preprocess_people.py $ofile
+		python scmp.py $ofile
+	    elif [[ $ofile == *"estadao"* ]]; then
+		python estadao.py $ofile
+	    elif [[ $ofile == *"pagina12"* ]]; then
+		python pagina12.py $ofile
+	    elif [[ $ofile == *"clarin"* ]]; then
+		python clarin.py $ofile
+	    elif [[ $ofile == *"lanacion"* ]]; then
+		python lanacion.py $ofile
+	    elif [[ $ofile == *"folha"* ]]; then
+		python folha.py $ofile
+	    elif [[ $ofile == *"people"* ]]; then
+		python people.py $ofile
 	    else
 		echo "No idea what source : $ofile"
 	    fi

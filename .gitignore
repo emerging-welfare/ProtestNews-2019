@@ -16,5 +16,8 @@ missing_news_urls*
 201903221045_dev.solution
 201903221045_test.solution
 201903221045_train.solution
-# Mac os DS_STORE files 
+.bash_history
+output/
+
+# Mac os DS_STORE files
 .DS_STORE

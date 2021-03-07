@@ -1,6 +1,0 @@
-#You may need these packages:
-sudo apt-get install g++ python-dev python3-dev ant
-
-#Not available with pip :
-python-boilerpipe -> https://github.com/OsmanMutlu/python-boilerpipe # A fork of the original
-python-goose -> https://github.com/OsmanMutlu/python-goose # A fork of the original

@@ -1,8 +1,8 @@
 import scrapy
 from scrapy.utils.log import configure_logging
 import logging
-import pandas as pd
 import os
+import json
 # . is important here, it is a relative import
 from .convert_scmp_url import is_scmp_url, convert
 
@@ -17,26 +17,27 @@ class HtmlSpider(scrapy.Spider):
     )
 
     def __init__(self, filename="", **kwargs):
-
         self.filename = filename
         super().__init__(**kwargs)
 
     def start_requests(self):
+        with open(self.filename, "r", encoding="utf-8") as f:
+            lines = f.read().splitlines()
 
-        urls = pd.read_json(self.filename, orient="records", lines=True)["url"].unique().tolist()
+        urls = [json.loads(line)["url"] for line in lines]
+
         for url in urls:
-            outfile = url.replace("/", "_")
-            outfile = outfile.replace(":", "_")
+            outfile = url.replace("/", "_").replace(":", "_")
             outfile = "./tmp/htmls/" + outfile
-            if os.path.isfile(outfile):
+            if os.path.isfile(outfile): # Already downloaded
                 continue
 
+            # TODO: Does this work? If not we can call selenium here
             if is_scmp_url(url):
                 url = convert(url)
-            
+
             yield scrapy.Request(url=url, callback=self.parse, meta={"outfile":outfile})
 
     def parse(self, response):
-
         with open(response.meta["outfile"] , 'wb') as f:
             f.write(response.body)
