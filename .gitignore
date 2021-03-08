@@ -4,6 +4,7 @@ collector/tmp
 *.csv
 *.log
 collector/log.txt
+collector/*.txt
 Sentence/log.txt
 Document/log.txt
 __pycache__/

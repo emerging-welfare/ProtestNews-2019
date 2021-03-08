@@ -7,15 +7,16 @@ stoplist = ['Email | Print', '+', 'stumbleupon', 'More Pictures', 'Save Article'
 if __name__ == "__main__":
     filename = sys.argv[1]
 
-    with open(filename, "r",encoding="utf-8") as f:
+    with open("tmp/htmls/" + filename, "r",encoding="utf-8") as f:
         html_string = f.read()
 
     htmlparser = etree.HTMLParser(remove_comments=True)
     doc = etree.HTML(html_string, htmlparser)
-    if not doc:
+    if doc is None:
         print("Couldn't load html: " + filename)
         sys.exit(0)
 
+    text = ""
     title=" ".join(doc.xpath('//table//div[@id="p_title"]/text()'))
     if not title:
         title= " ".join(doc.xpath('//*//h1//text()'))
@@ -48,5 +49,3 @@ if __name__ == "__main__":
 
     with open("tmp/texts/" + filename, "w", encoding="utf-8") as g:
         g.write(text)
-
-    print("Finished html-to-text: " + filename)

@@ -7,12 +7,12 @@ stoplist = ["Tags:","ALSO READ","Please read our before posting comments","TERMS
 if __name__ == "__main__":
     filename = sys.argv[1]
 
-    with open(filename, "rb") as f:
+    with open("tmp/htmls/" + filename, "rb") as f:
         html_string = f.read()
 
     htmlparser = etree.HTMLParser(remove_comments=True)
     doc = etree.HTML(html_string, htmlparser)
-    if not doc:
+    if doc is None:
         print("Couldn't load html: " + filename)
         sys.exit(0)
 
@@ -47,5 +47,3 @@ if __name__ == "__main__":
 
     with open("tmp/texts/" + filename, "w", encoding="utf-8") as g:
         g.write(text)
-
-    print("Finished html-to-text: " + filename)

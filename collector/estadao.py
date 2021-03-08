@@ -10,7 +10,7 @@ if __name__ == '__main__':
         print("Filename in pass list: ", filename)
         sys.exit(0)
 
-    with open(filename, "r") as f:
+    with open("tmp/htmls/" + filename, "r") as f:
         htmltext = f.read()
 
     htmlparser = etree.HTMLParser()
@@ -47,5 +47,3 @@ if __name__ == '__main__':
 
     with open("tmp/texts/" + filename, "w", encoding="utf-8") as g:
         g.write(text)
-
-    print("Finished html-to-text: " + filename)

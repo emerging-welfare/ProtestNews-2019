@@ -1,6 +1,6 @@
 from lxml import etree
 import re, sys
-from utils import stringify_children, remove_all_lines_after_stoplist
+from utils import stringify_children, remove_all_lines_after_stoplist, remove_stoplist_lines
 
 stoplist = ["RELATED", "From around the web", "More from The Times of India", "Recommended By Colombia",
             "more from times of india Cities","You might also", "You might also like", "more from times of india",
@@ -18,12 +18,12 @@ if __name__ == "__main__":
         print("Filename in pass_list: " + filename)
         sys.exit(0)
 
-    with open(filename, "rb") as f:
+    with open("tmp/htmls/" + filename, "rb") as f:
         html_string = f.read()
 
     htmlparser = etree.HTMLParser(remove_comments=True)
     doc = etree.HTML(html_string, htmlparser)
-    if not doc:
+    if doc is None:
         print("Couldn't load html: " + filename)
         sys.exit(0)
 
@@ -58,5 +58,3 @@ if __name__ == "__main__":
 
     with open("tmp/texts/" + filename, "w", encoding="utf-8") as g:
         g.write(text)
-
-    print("Finished html-to-text: " + filename)

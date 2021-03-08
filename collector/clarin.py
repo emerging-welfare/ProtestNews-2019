@@ -4,7 +4,7 @@ import re,sys
 if __name__ == '__main__':
     filename = sys.argv[1]
 
-    with open(filename, "r") as f:
+    with open("tmp/htmls/" + filename, "r") as f:
         htmltext = f.read()
 
     htmlparser = etree.HTMLParser()
@@ -28,5 +28,3 @@ if __name__ == '__main__':
 
     with open("tmp/texts/" + filename, "w", encoding="utf-8") as g:
         g.write(text)
-
-    print("Finished html-to-text: " + filename)

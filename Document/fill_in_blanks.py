@@ -19,8 +19,9 @@ count = 0
 total = 0
 for line in lines:
     total +=1
+    line = json.loads(line)
     url = line["url"]
-    filename = "tmp/text/" + url.replace("/", "_").replace(":", "_")
+    filename = "tmp/texts/" + url.replace("/", "_").replace(":", "_")
     if path.exists(filename):
         with open(filename, "r", encoding="utf-8") as f:
             text = f.read()
